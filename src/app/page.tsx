@@ -2,6 +2,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { SpiritSection } from "@/components/sections/SpiritSection";
 import { IncentivesSection } from "@/components/sections/IncentivesSection";
+import { ExpectationsSection } from "@/components/sections/ExpectationsSection";
+import { FAQSection } from "@/components/sections/FAQSection";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <HeroSection />
       <SpiritSection />
       <IncentivesSection />
+      <ExpectationsSection />
+      <FAQSection />
     </main>
   );
 }

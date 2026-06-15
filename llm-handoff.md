@@ -51,11 +51,11 @@ Current progress percentage: 40% (Hero, Spirit, Asset Infrastructure, and Incent
 
 # Current Status
 Current Phase: Implementation Phase
-Current Milestone: What We Expect Section V1
+Current Milestone: Contact Section V1
 Current Build Status: Passing (Build & Lint)
 Current Branch: Des_implementation
-Current Active Section: What We Expect
-Next Immediate Task: Implement What We Expect V1 (layout, typography, structure)
+Current Active Section: Contact Us
+Next Immediate Task: Implement Contact Us V1 (layout, typography, structure)
 
 ---
 
@@ -67,6 +67,8 @@ Next Immediate Task: Implement What We Expect V1 (layout, typography, structure)
 - Implemented core reusable typography and layout components.
 - Implemented `HeroSection` V1 and `SpiritSection` V1.
 - Implemented `IncentivesSection` V1 (Corrected to a unified editorial showcase composition).
+- Implemented `ExpectationsSection` V1 (What We Expect).
+- Implemented `FAQSection` V1 (Before You Apply).
 - Created `public/` directory structure for upcoming assets.
 - Implemented strongly-typed `src/assets/registry.ts`.
 - Completed Architecture Audit confirming 10/10 modularity for flexible section reordering without layout collapse.

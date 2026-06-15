@@ -1,5 +1,43 @@
 # Development Log
 
+## 2026-06-15 (Before You Apply Section Implementation)
+
+### Completed
+- Implemented `FAQSection.tsx` matching the editorial requirements.
+- Utilized `framer-motion` to create a smooth, cinematic accordion experience for the FAQs.
+- Developed a custom layout for the default-expanded "03 RESPONSIBILITIES" section, supporting nested Q&As inside a multi-column responsive grid.
+- Engineered a large spotlight visual effect directly using CSS filters (`mix-blend-screen`, `blur-[120px]`) behind the "BEFORE YOU APPLY" typographic composition.
+
+### Added Files
+- `src/components/sections/FAQSection.tsx`
+
+### Modified Files
+- `src/app/page.tsx`
+
+### Build Status
+Pass (npm run build and npm run lint both succeed).
+
+### Next Steps
+- Implement the "Contact Us" section.
+## 2026-06-15 (What We Expect Section Implementation)
+
+### Completed
+- Implemented `ExpectationsSection.tsx` matching the editorial requirements.
+- Re-used `GridContainer`, `EditorialHeading`, and `VerticalLabel` to maintain consistency.
+- Correctly integrated the right vertical rail ("ANTARAGNI '26") directly into the CSS Grid flow (lg:col-span-1) to avoid overlap issues seen previously.
+- Implemented the 4-column responsive grid mapping over the expectations data array.
+
+### Added Files
+- `src/components/sections/ExpectationsSection.tsx`
+
+### Modified Files
+- `src/app/page.tsx`
+
+### Build Status
+Pass (npm run build and npm run lint both succeed).
+
+### Next Steps
+- Implement the "Before You Apply" section.
 ## 2026-06-15 (Incentives Section Correction)
 
 ### Completed

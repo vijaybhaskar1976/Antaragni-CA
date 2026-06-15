@@ -62,7 +62,7 @@ export function HeroSection() {
         </div>
 
         {/* Right Edge: Vertical Labels */}
-        <div className="hidden lg:flex col-span-1 flex-col items-center justify-between h-[80%] absolute right-6 top-10">
+        <div className="hidden lg:flex lg:col-span-1 flex-col items-end justify-between h-full py-10">
           <div className="relative h-full flex flex-col items-center justify-between">
             {/* Top vertical label with line */}
             <div className="flex flex-col items-center gap-4">
