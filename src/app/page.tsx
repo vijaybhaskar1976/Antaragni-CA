@@ -4,6 +4,7 @@ import { SpiritSection } from "@/components/sections/SpiritSection";
 import { IncentivesSection } from "@/components/sections/IncentivesSection";
 import { ExpectationsSection } from "@/components/sections/ExpectationsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 import { SponsorsSection } from "@/components/sections/SponsorsSection";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <ExpectationsSection />
       <FAQSection />
       <SponsorsSection />
+      <ContactSection />
     </main>
   );
 }
