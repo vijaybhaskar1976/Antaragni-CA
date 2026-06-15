@@ -19,7 +19,7 @@ const placeholders = [
   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1488161628813-04466f872507?q=80&w=600&auto=format&fit=crop"
+  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop"
 ];
 
 // No spring effects, pure cinematic ease
@@ -117,16 +117,22 @@ export function ContactSection() {
       <GridContainer className="items-stretch h-full relative">
         
         {/* LEFT COLUMN: Editorial Text (approx 32%) */}
-        <div className="col-span-1 md:col-span-4 flex flex-col justify-center pt-8 md:pt-16 lg:pt-24 relative z-10">
+        <div className="col-span-1 md:col-span-4 flex flex-col justify-center relative z-10 h-full">
           
-          <div className="flex items-center gap-4 mb-12 md:mb-16">
+          <div className="flex items-center gap-4 mb-8 lg:mb-10 pt-16 md:pt-0 mt-auto md:mt-0">
             <span className="text-accent text-[10px] md:text-xs tracking-[0.2em] uppercase font-medium whitespace-nowrap">
               OUR TEAM
             </span>
-            <motion.div variants={lineXVariant} className="h-[1px] bg-accent/40 w-full max-w-[60px] md:max-w-[80px] origin-left" />
+            <motion.div 
+              variants={lineXVariant} 
+              initial="hidden" 
+              whileInView="visible" 
+              viewport={{ once: true }}
+              className="h-[1px] bg-accent/40 w-full max-w-[60px] md:max-w-[80px] origin-left" 
+            />
           </div>
 
-          <div className="flex flex-col font-serif text-[clamp(40px,4.5vw,72px)] leading-[0.9] text-foreground mb-16 lg:mb-24">
+          <div className="flex flex-col font-serif text-[clamp(40px,4.5vw,72px)] leading-[0.9] text-foreground mb-10 lg:mb-14">
             <motion.div custom={0} variants={headingLineVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               CONTACT
             </motion.div>
@@ -135,9 +141,21 @@ export function ContactSection() {
             </motion.div>
           </div>
 
-          <motion.div variants={lineXVariant} className="h-[2px] w-8 bg-accent mb-12 md:mb-16 origin-left" />
+          <motion.div 
+            variants={lineXVariant} 
+            initial="hidden" 
+            whileInView="visible" 
+            viewport={{ once: true }}
+            className="h-[2px] w-8 bg-accent mb-8 lg:mb-10 origin-left" 
+          />
 
-          <motion.p variants={fadeVariant} className="text-muted text-[10px] md:text-[11px] lg:text-xs leading-[2.4] tracking-[0.15em] uppercase max-w-[280px]">
+          <motion.p 
+            variants={fadeVariant} 
+            initial="hidden" 
+            whileInView="visible" 
+            viewport={{ once: true }}
+            className="text-muted text-[10px] md:text-[11px] lg:text-xs leading-[2.4] tracking-[0.15em] uppercase max-w-[280px] pb-16 md:pb-0"
+          >
             A collective of dreamers,<br/>
             thinkers, and doers.<br/><br/>
             United by purpose.<br/><br/>
@@ -150,8 +168,7 @@ export function ContactSection() {
         </div>
 
         {/* RIGHT COLUMN: Team Grid (approx 68%) */}
-        {/* Start immediately after left column, extend to right, leave padding for vertical label */}
-        <div className="col-span-1 md:col-span-8 flex flex-col justify-center pt-24 md:pt-0 lg:pr-16 relative">
+        <div className="col-span-1 md:col-span-8 flex flex-col justify-center h-full lg:pr-16 relative">
           
           {/* Desktop & Tablet 6-Col Internal Grid */}
           <div className="hidden md:grid grid-cols-6 gap-x-4 lg:gap-x-6 gap-y-12 lg:gap-y-16 w-full">
@@ -179,13 +196,31 @@ export function ContactSection() {
         {/* EDITORIAL FRAME ELEMENTS - Right Edge */}
         <div className="hidden lg:flex absolute right-6 md:right-10 lg:right-20 top-12 bottom-12 flex-col items-center pointer-events-none z-10 w-8">
           
-          <motion.div variants={fadeVariant} className="flex-shrink-0 mb-8 pt-8">
+          <motion.div 
+            variants={fadeVariant} 
+            initial="hidden" 
+            whileInView="visible" 
+            viewport={{ once: true }}
+            className="flex-shrink-0 mb-8 pt-8"
+          >
             <VerticalLabel label="ANTARAGNI '26" color="red" />
           </motion.div>
           
-          <motion.div variants={lineYVariant} className="w-[1px] flex-grow bg-accent/40 origin-top" />
+          <motion.div 
+            variants={lineYVariant} 
+            initial="hidden" 
+            whileInView="visible" 
+            viewport={{ once: true }}
+            className="w-[1px] flex-grow bg-accent/40 origin-top" 
+          />
           
-          <motion.div variants={lineXVariant} className="absolute bottom-0 right-1/2 w-16 h-[2px] bg-accent origin-right translate-y-8" />
+          <motion.div 
+            variants={lineXVariant} 
+            initial="hidden" 
+            whileInView="visible" 
+            viewport={{ once: true }}
+            className="absolute bottom-0 right-1/2 w-16 h-[2px] bg-accent origin-right translate-y-8" 
+          />
         </div>
 
       </GridContainer>

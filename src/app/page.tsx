@@ -6,6 +6,7 @@ import { ExpectationsSection } from "@/components/sections/ExpectationsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { SponsorsSection } from "@/components/sections/SponsorsSection";
+import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <FAQSection />
       <SponsorsSection />
       <ContactSection />
+      <FinalCtaSection />
     </main>
   );
 }
