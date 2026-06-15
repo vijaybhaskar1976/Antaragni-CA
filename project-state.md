@@ -2,7 +2,7 @@
 Project Name: antaragni-website
 Project Goal: Create an ultra-premium, brutalist editorial web experience for a collegiate cultural festival named "ANTARAGNI".
 Current Phase: Implementation Phase
-Current Milestone: Hero Section V1
+Current Milestone: What We Expect Section V1
 Project Status: In Progress
 
 ---
@@ -14,6 +14,16 @@ Styling: Tailwind CSS
 Animation: Framer Motion
 Deployment: Not Specified
 Version Information: Node.js, Next.js 14.2.3
+
+---
+
+# Deferred Sections
+Section: Testimonial Section
+Status: Deferred
+Reason: Temporarily removed from active implementation scope to accelerate completion of primary conversion-focused and informational sections.
+Original Position: Between Spirit of Antaragni and Incentives.
+Future Action: May be reintroduced during the polish/content review phase after the core website has been implemented.
+Priority: Low
 
 ---
 
@@ -46,6 +56,10 @@ Version Information: Node.js, Next.js 14.2.3
   Status: Completed
   Last Updated: 2026-06-15
   Purpose: Core architectural rules
+- section-ordering-guidelines.md
+  Status: Completed
+  Last Updated: 2026-06-15
+  Purpose: Rules for adding and reordering modular sections
 - website-reconstruction-spec.md
   Status: Completed
   Last Updated: 2026-06-15
@@ -55,10 +69,10 @@ Version Information: Node.js, Next.js 14.2.3
 
 # Current Repository Status
 Current Branch: Des_implementation
-Git Status: Modified files for Hero V1 implementation
+Git Status: Modified Incentives V1 to unified editorial showcase composition.
 Last Successful Build: 2026-06-15 (npm run build)
 Current Build Status: Passing
-Current Development Stage: Hero V1 Implementation
+Current Development Stage: What We Expect Section Implementation
 
 ---
 

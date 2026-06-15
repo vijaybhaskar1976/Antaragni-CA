@@ -1,5 +1,123 @@
 # Development Log
 
+## 2026-06-15 (Incentives Section Correction)
+
+### Completed
+- Incentives V1 layout corrected from alternating showcase interpretation to a unified editorial showcase composition.
+- Replaced the 4-row layout with a single horizontal scene featuring proportionally accurate, custom placeholders (certificate, pass, bottle, cap, envelope).
+- Added a dramatic CSS volumetric spotlight effect over the entire spread to match the premium merchandise photoshoot reference.
+- Substantially reduced the section height to achieve the compact density seen in the reference screenshot.
+
+### Removed Files
+- `src/components/ui/ShowcaseItem.tsx`
+
+### Modified Files
+- `src/components/sections/IncentivesSection.tsx`
+
+### Build Status
+Pass (npm run build and npm run lint both succeed).
+
+### Completed
+- Implemented `IncentivesSection.tsx` strictly avoiding standard SaaS card-grid styles in favor of a luxury exhibition product showcase.
+- Created `ShowcaseItem.tsx`, a highly reusable alternating 2-column component supporting structural placeholder areas to decouple layout from missing final assets.
+- Integrated the section sequentially below Spirit of Antaragni in `page.tsx` adhering to the previously established strict modularity.
+
+### Added Files
+- `src/components/ui/ShowcaseItem.tsx`
+- `src/components/sections/IncentivesSection.tsx`
+
+### Modified Files
+- `src/app/page.tsx`
+
+### Build Status
+Pass (npm run build and npm run lint both succeed without errors).
+
+### Decisions Made
+- Chose an alternating 2-column macro-grid for the rewards instead of a multi-item row. This emphasizes the value of each individual incentive by giving it massive typographic negative space, satisfying the "luxury product photography" requirement.
+
+### Next Steps
+- Implement the "What We Expect" section.
+
+## 2026-06-15 (Architecture Audit)
+
+### Completed
+- Audited `src/app/page.tsx` and underlying components for modularity.
+- Confirmed the homepage already implements the `GOOD` component composition pattern.
+- Generated `architecture-audit-report.md`.
+- Established `section-ordering-guidelines.md` for strict layout enforcement.
+
+### Build Status
+Pass (npm run build and npm run lint both succeed).
+
+### Decisions Made
+- No code refactoring was necessary because the components were already built as highly encapsulated `<Section />` modules.
+
+### Next Steps
+- Implement Incentives V1.
+
+## 2026-06-15 (Roadmap Change: Defer Testimonial Section)
+
+### Decision
+The Testimonial section has been temporarily removed from the active development roadmap and deferred to a later phase. 
+
+### Reasoning
+This section was removed from active scope to accelerate completion of primary conversion-focused and informational sections. 
+
+### Impact on Development Roadmap
+- The section remains part of the design archive.
+- No code should be deleted.
+- Existing references may remain.
+- Development proceeds directly to the Incentives section.
+
+### Next Steps
+- Implement Incentives V1 (layout, typography, structure).
+
+## 2026-06-15 (Asset Infrastructure Setup)
+
+### Completed
+- Scanned repository for existing image implementation (Found 0 hardcoded paths).
+- Created missing asset directory structure inside `public/` (with `.gitkeep` files for Git tracking).
+- Implemented a strongly-typed centralized asset registry (`src/assets/registry.ts`).
+- Created `asset-migration-report.md` detailing how placeholders will eventually be swapped.
+
+### Added Files
+- `src/assets/registry.ts`
+- `src/assets/index.ts`
+- `public/logos/.gitkeep`, `public/hero/.gitkeep`, `public/spirit/.gitkeep`, etc.
+
+### Build Status
+Pass (npm run build and npm run lint both succeed).
+
+### Decisions Made
+- Opted for a strongly-typed TypeScript registry pointing to `public/` rather than manual string interpolation across components. This prevents 404s and ensures autocomplete.
+
+### Next Steps
+- Implement the "Incentives" or "What We Expect" sections now that the infrastructure is ready.
+
+## 2026-06-15 (Spirit of Antaragni Implementation)
+
+### Completed
+- Implemented the `SpiritSection.tsx` matching the editorial requirements.
+- Expanded the `StatisticBlock.tsx` component to support customizable `valueColor` and `labelColor` props, allowing it to handle inverted color schemes (e.g. red value, white label vs white value, red label).
+- Ensured layout accuracy using asymmetric grids, CSS spotlights for depth, and fine hair-line borders.
+- Verified build and lint checks to ensure strict zero-error policy.
+
+### Modified Files
+- `src/components/ui/StatisticBlock.tsx`
+- `src/app/page.tsx`
+
+### Added Files
+- `src/components/sections/SpiritSection.tsx`
+
+### Build Status
+Pass (npm run build and npm run lint both succeed).
+
+### Decisions Made
+- Chose to dynamically style `StatisticBlock` via props rather than creating a new component for the stats row, adhering to the "do not duplicate functionality" constraint.
+
+### Next Steps
+- Implement the "Incentives" or "What We Expect" sections.
+
 ## 2026-06-15 (Hero V1 Implementation)
 
 ### Completed

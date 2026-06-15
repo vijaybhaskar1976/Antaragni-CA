@@ -17,7 +17,7 @@ export function EditorialHeading({
   const variants = {
     hero: "text-[10vw] xl:text-[130px] leading-[0.9]",
     section: "text-[80px] leading-none",
-    number: "text-[48px] md:text-[64px] leading-none tracking-[0.02em]",
+    number: "text-[36px] md:text-[48px] leading-none tracking-[0.02em]",
   };
 
   return (

@@ -4,6 +4,31 @@ This file is intended for a new AI model or developer.
 
 ---
 
+# IMPORTANT ROADMAP CHANGE
+The testimonial section shown in the original design references has been intentionally deferred.
+Do NOT implement this section unless explicitly instructed.
+
+Current implementation order:
+Hero
+↓
+Spirit of Antaragni
+↓
+Incentives
+↓
+What We Expect
+↓
+Before You Apply
+↓
+Contact
+↓
+Sponsors
+↓
+Final CTA
+
+The testimonial section may be restored later.
+
+---
+
 # Project Summary
 What is being built?
 An ultra-premium, brutalist editorial web experience for a collegiate cultural festival named "ANTARAGNI". It functions as a landing page to attract and recruit campus ambassadors.
@@ -11,7 +36,7 @@ An ultra-premium, brutalist editorial web experience for a collegiate cultural f
 Why is it being built?
 To create a high-impact, prestigious first impression, using cinematic contrasts and dramatic typography to convey exclusivity.
 
-Current progress percentage: 15% (Foundational layout, typography components, and Hero V1 section are completed).
+Current progress percentage: 40% (Hero, Spirit, Asset Infrastructure, and Incentives completed).
 
 ---
 
@@ -20,15 +45,17 @@ Current progress percentage: 15% (Foundational layout, typography components, an
 2. website-reconstruction-spec.md (Main architectural and design vision)
 3. frontend-design-system.md (Design system, typography, colors)
 4. asset-manifest.md (Strict rules on what visual assets are allowed)
-5. src/components/ui/* (Read the reusable components to avoid duplicating logic)
+5. src/assets/registry.ts (Centralized asset path manager)
 
 ---
 
 # Current Status
 Current Phase: Implementation Phase
-Current Milestone: Section 2/3 (Stats, Spirit)
+Current Milestone: What We Expect Section V1
 Current Build Status: Passing (Build & Lint)
 Current Branch: Des_implementation
+Current Active Section: What We Expect
+Next Immediate Task: Implement What We Expect V1 (layout, typography, structure)
 
 ---
 
@@ -37,13 +64,17 @@ Current Branch: Des_implementation
 - Project memory documentation has been set up.
 - Fixed ESLint configuration.
 - Added `Bodoni Moda` Google font to serve as the main display serif.
-- Implemented core reusable typography and layout components (`EditorialHeading`, `MetadataLabel`, `StatisticBlock`, `GridContainer`, `Navbar`).
-- Implemented `HeroSection` V1 with proper spacing, typography hierarchy, and composition layout based on the visual references.
+- Implemented core reusable typography and layout components.
+- Implemented `HeroSection` V1 and `SpiritSection` V1.
+- Implemented `IncentivesSection` V1 (Corrected to a unified editorial showcase composition).
+- Created `public/` directory structure for upcoming assets.
+- Implemented strongly-typed `src/assets/registry.ts`.
+- Completed Architecture Audit confirming 10/10 modularity for flexible section reordering without layout collapse.
 
 ---
 
 # What Is Currently Being Worked On
-- The implementation of the remaining sections ("Spirit of Antaragni", "Stats Bar", etc.) following the newly established typographic baseline.
+- The implementation of the remaining sections ("Incentives", "What We Expect", etc.) following the established typographic baseline.
 
 ---
 

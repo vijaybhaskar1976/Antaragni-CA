@@ -3,7 +3,12 @@ import { Inter, Bodoni_Moda } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const bodoni = Bodoni_Moda({ subsets: ["latin"], variable: "--font-serif", display: "swap" });
+const bodoni = Bodoni_Moda({ 
+  subsets: ["latin"], 
+  variable: "--font-serif", 
+  display: "swap",
+  adjustFontFallback: false
+});
 
 export const metadata: Metadata = {
   title: "Antaragni Campus Ambassador Program",
