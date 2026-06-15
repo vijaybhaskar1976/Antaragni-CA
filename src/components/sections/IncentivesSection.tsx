@@ -1,4 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { EditorialHeading } from "../ui/EditorialHeading";
+import { fadeUp, scrollReveal } from "@/lib/animations";
 import { cn } from "@/lib/utils";
 
 export function IncentivesSection() {
@@ -7,8 +11,12 @@ export function IncentivesSection() {
       {/* Top-Down Spotlight Effect */}
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[1000px] h-[800px] bg-white/[0.04] blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
       
-      {/* Directional Beam Effect mimicking the reference */}
-      <div className="absolute top-0 left-[60%] -translate-x-1/2 w-[400px] h-[1200px] bg-gradient-to-b from-white/[0.03] to-transparent rotate-[-15deg] blur-[60px] mix-blend-screen pointer-events-none" />
+      {/* Directional Beam Effect mimicking the reference with subtle shimmer animation */}
+      <motion.div 
+        className="absolute top-0 left-[60%] -translate-x-1/2 w-[400px] h-[1200px] bg-gradient-to-b from-white/[0.03] to-transparent rotate-[-15deg] blur-[60px] mix-blend-screen pointer-events-none" 
+        animate={{ opacity: [0.02, 0.04, 0.02] }}
+        transition={{ duration: 8, ease: "easeInOut", repeat: Infinity }}
+      />
 
       <div className="w-full max-w-[1440px] mx-auto px-6 md:px-10 lg:px-20">
         
@@ -27,10 +35,24 @@ export function IncentivesSection() {
         </div>
 
         {/* The Exhibition Showcase (Unified Scene) */}
-        <div className="relative w-full flex flex-col lg:flex-row items-center lg:items-end justify-center lg:justify-between gap-16 lg:gap-8 pt-10">
+        <motion.div 
+          className="relative w-full flex flex-col lg:flex-row items-center lg:items-end justify-center lg:justify-between gap-16 lg:gap-8 pt-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={scrollReveal}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.12, // 120ms delay as requested
+              }
+            }
+          }}
+        >
           
           {/* 01: Certificate */}
-          <div className="flex flex-col items-center">
+          <motion.div variants={fadeUp} className="flex flex-col items-center">
             {/* Object */}
             <div className="w-[200px] md:w-[240px] h-[280px] md:h-[320px] bg-[#0f0f0f] border border-white/10 rounded-sm shadow-2xl relative z-10 flex items-center justify-center">
                <span className="text-white/5 text-xs font-serif tracking-widest">CERTIFICATE</span>
@@ -44,10 +66,10 @@ export function IncentivesSection() {
                 CERTIFICATE<br/>OF APPRECIATION
               </span>
             </div>
-          </div>
+          </motion.div>
 
           {/* 02: Pronite Pass */}
-          <div className="flex flex-col items-center">
+          <motion.div variants={fadeUp} className="flex flex-col items-center">
             {/* Object (Pass/Badge) */}
             <div className="w-[110px] md:w-[130px] h-[160px] md:h-[190px] bg-[#0f0f0f] border border-white/10 rounded-sm shadow-2xl relative z-10 flex items-center justify-center">
               {/* Lanyard strap placeholder */}
@@ -63,10 +85,10 @@ export function IncentivesSection() {
                 PRONITE PASS
               </span>
             </div>
-          </div>
+          </motion.div>
 
           {/* 03: Merchandise (Bottle + Cap) */}
-          <div className="flex flex-col items-center">
+          <motion.div variants={fadeUp} className="flex flex-col items-center">
             {/* Object Group */}
             <div className="relative w-[220px] md:w-[260px] h-[220px] md:h-[260px] flex items-end justify-center z-10">
               {/* Bottle */}
@@ -87,10 +109,10 @@ export function IncentivesSection() {
                 MERCHANDISE
               </span>
             </div>
-          </div>
+          </motion.div>
 
           {/* 04: Opportunities (Envelope/Box) */}
-          <div className="flex flex-col items-center">
+          <motion.div variants={fadeUp} className="flex flex-col items-center">
             {/* Object */}
             <div className="w-[220px] md:w-[260px] h-[160px] md:h-[190px] bg-[#0f0f0f] border border-white/10 rounded-sm shadow-2xl relative z-10 flex items-center justify-center overflow-hidden">
                {/* Envelope V shape placeholder */}
@@ -106,9 +128,9 @@ export function IncentivesSection() {
                 OPPORTUNITIES
               </span>
             </div>
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );

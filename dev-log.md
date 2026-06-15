@@ -1,6 +1,30 @@
 # Development Log
 
-## 2026-06-15 (Before You Apply Section Implementation)
+## 2026-06-15 (Premium Editorial Motion System Implementation)
+
+### Completed
+- Created `src/lib/animations.ts` containing centralized Framer Motion variants (`fadeUp`, `fadeIn`, `staggerContainer`, `revealMask`, `lineDraw`, etc.) with consistent `EASING` constants.
+- Applied global cinematic animation pass across the following sections:
+  - **HeroSection**: Slow headline reveal, staggered stats, delayed rail fade, and very subtle background arch parallax.
+  - **SpiritSection**: Mask-based curtain reveal for the image with a subtle hover scale, split reveal for typography, and staggered numbers.
+  - **IncentivesSection**: Staggered product showcase reveal (120ms), with a slow, repeating shimmer overlay.
+  - **ExpectationsSection**: Custom 1.5s diagonal line sketch animation using `scaleX` and a rotated origin, staggered expectation cards, and a mask-revealed headline.
+
+### Modified Files
+- `src/components/sections/HeroSection.tsx`
+- `src/components/sections/SpiritSection.tsx`
+- `src/components/sections/IncentivesSection.tsx`
+- `src/components/sections/ExpectationsSection.tsx`
+
+### Added Files
+- `src/lib/animations.ts`
+
+### Build Status
+Pass (npm run build and npm run lint both succeed without errors).
+
+### Decisions Made
+- `Contact` and `Sponsors` sections were listed in the prompt but did not exist in the current workspace snapshot, so animations were applied exclusively to the existing, pre-built sections (`Hero`, `Spirit`, `Incentives`, `Expectations`).
+- Adopted Apple/A24-inspired minimal constraints: animations trigger only once at 20% scroll depth (`once: true, amount: 0.2`) and focus on opacity/transforms rather than layout-shifting blur or scaling effects to maintain a high frame rate and zero CLS.## 2026-06-15 (Before You Apply Section Implementation)
 
 ### Completed
 - Implemented `FAQSection.tsx` matching the editorial requirements.
