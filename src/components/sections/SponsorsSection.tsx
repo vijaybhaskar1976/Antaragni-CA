@@ -118,7 +118,7 @@ export function SponsorsSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="font-serif text-foreground uppercase whitespace-nowrap text-[clamp(48px,5vw,88px)] leading-[0.95] tracking-[0.05em]">
+              <h2 className="text-accent text-3xl md:text-4xl lg:text-5xl font-medium uppercase tracking-[0.2em] whitespace-nowrap">
                 OUR VALUED SUPPORTERS
               </h2>
             </motion.div>
