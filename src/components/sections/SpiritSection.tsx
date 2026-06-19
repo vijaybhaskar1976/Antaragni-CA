@@ -7,7 +7,7 @@ import { BodyText } from "../ui/BodyText";
 import { MetadataLabel } from "../ui/MetadataLabel";
 import { StatisticBlock } from "../ui/StatisticBlock";
 import { GridContainer } from "../layout/GridContainer";
-import { fadeUp, staggerContainer, revealMaskBottom, scrollReveal, EASING } from "@/lib/animations";
+import { fadeUp, fadeIn, staggerContainer, revealMaskBottom, scrollReveal, EASING } from "@/lib/animations";
 import { assets } from "@/lib/assets";
 
 export function SpiritSection() {
@@ -48,22 +48,32 @@ export function SpiritSection() {
           </motion.div>
         </motion.div>
 
-        {/* Right Side: Hero Image Area Placeholder */}
-        <div className="col-span-1 md:col-span-3 lg:col-span-6 relative mt-16 md:mt-0 min-h-[500px] flex items-center justify-center">
+        {/* Right Side: Hero Image Area */}
+        <div className="col-span-1 md:col-span-3 lg:col-span-6 relative mt-16 md:mt-0 min-h-[500px] flex items-center justify-center pointer-events-none">
           {/* Volumetric Spotlight mimicking the stage lights */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white opacity-[0.06] blur-[100px] rounded-full pointer-events-none mix-blend-screen" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white opacity-[0.05] blur-[100px] rounded-full pointer-events-none mix-blend-screen" />
           
           {/* Hero Image Area */}
           <motion.div 
-            className="relative w-full h-full max-h-[600px] bg-black/40 border border-white/5 overflow-hidden flex items-end justify-center origin-center"
-            variants={revealMaskBottom}
+            className="absolute top-1/2 -translate-y-1/2 right-0 md:right-[-5%] w-[100%] md:w-[120%] lg:w-[110%] h-[120%] min-h-[600px] lg:min-h-[800px] flex items-center justify-center origin-center pointer-events-none z-0"
+            variants={fadeIn}
             initial="hidden"
             whileInView="visible"
             viewport={scrollReveal}
-            whileHover={{ scale: 1.02 }}
-            transition={{ ease: EASING, duration: 1.2 }}
+            transition={{ ease: EASING, duration: 1.4 }}
           >
-             <Image src={assets.spirit.crowd} alt="Spirit of Antaragni Crowd" fill className="object-cover" />
+             <Image 
+               src={assets.spirit.crowd} 
+               alt="Spirit of Antaragni Crowd" 
+               fill 
+               className="object-cover object-[center_70%] opacity-85 mix-blend-lighten" 
+             />
+             
+             {/* Fade masks to dissolve the image boundaries into the background */}
+             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-background/20 to-background" />
+             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background opacity-90" />
+             <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-transparent opacity-50" />
+             <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent opacity-60" />
           </motion.div>
         </div>
       </GridContainer>
