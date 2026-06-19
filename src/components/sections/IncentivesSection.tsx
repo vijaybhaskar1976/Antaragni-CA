@@ -95,68 +95,76 @@ export function IncentivesSection() {
               <div className="stage-area" ref={stageAreaRef}>
                 
                 {/* 01: Certificate */}
-                <EditableElement id="certificate" className="item-column">
-                  <div className="item-img-wrap">
-                    <img 
-                      src={assets.incentives.certificate} 
-                      alt="Certificate" 
-                      className="item-img"
-                      style={{ height: "100%" }}
-                    />
-                  </div>
-                  <EditableElement id="label_certificate" className="item-label">
+                <div className="item-column">
+                  <EditableElement id="certificate-image">
+                    <div className="item-img-wrap">
+                      <img 
+                        src={assets.incentives.certificate} 
+                        alt="Certificate" 
+                        className="item-img"
+                        style={{ height: "100%" }}
+                      />
+                    </div>
+                  </EditableElement>
+                  <EditableElement id="certificate-label" className="item-label">
                     <span className="item-number text-accent">01</span>
                     <span className="item-name text-white/70">CERTIFICATE</span>
                   </EditableElement>
-                </EditableElement>
+                </div>
 
                 {/* 02: Pronite Pass */}
-                <EditableElement id="pass" className="item-column">
-                  <div className="item-img-wrap">
-                    <img 
-                      src={assets.incentives.pass} 
-                      alt="Pronite Pass" 
-                      className="item-img"
-                      style={{ height: "72%" }}
-                    />
-                  </div>
-                  <EditableElement id="label_pass" className="item-label">
+                <div className="item-column">
+                  <EditableElement id="pass-image">
+                    <div className="item-img-wrap">
+                      <img 
+                        src={assets.incentives.pass} 
+                        alt="Pronite Pass" 
+                        className="item-img"
+                        style={{ height: "72%" }}
+                      />
+                    </div>
+                  </EditableElement>
+                  <EditableElement id="pass-label" className="item-label">
                     <span className="item-number text-accent">02</span>
                     <span className="item-name text-white/70">PRONITE PASS</span>
                   </EditableElement>
-                </EditableElement>
+                </div>
 
                 {/* 03: Merchandise */}
-                <EditableElement id="merchandise" className="item-column">
-                  <div className="item-img-wrap">
-                    <img 
-                      src={assets.incentives.merchandise} 
-                      alt="Merchandise" 
-                      className="item-img"
-                      style={{ height: "105%" }}
-                    />
-                  </div>
-                  <EditableElement id="label_merchandise" className="item-label">
+                <div className="item-column">
+                  <EditableElement id="merchandise-image">
+                    <div className="item-img-wrap">
+                      <img 
+                        src={assets.incentives.merchandise} 
+                        alt="Merchandise" 
+                        className="item-img"
+                        style={{ height: "105%" }}
+                      />
+                    </div>
+                  </EditableElement>
+                  <EditableElement id="merchandise-label" className="item-label">
                     <span className="item-number text-accent">03</span>
                     <span className="item-name text-white/70">MERCHANDISE</span>
                   </EditableElement>
-                </EditableElement>
+                </div>
 
                 {/* 04: Opportunities */}
-                <EditableElement id="opportunities" className="item-column">
-                  <div className="item-img-wrap">
-                    <img 
-                      src={assets.incentives.opportunities} 
-                      alt="Opportunities" 
-                      className="item-img"
-                      style={{ height: "82%" }}
-                    />
-                  </div>
-                  <EditableElement id="label_opportunities" className="item-label">
+                <div className="item-column">
+                  <EditableElement id="opportunities-image">
+                    <div className="item-img-wrap">
+                      <img 
+                        src={assets.incentives.opportunities} 
+                        alt="Opportunities" 
+                        className="item-img"
+                        style={{ height: "82%" }}
+                      />
+                    </div>
+                  </EditableElement>
+                  <EditableElement id="opportunities-label" className="item-label">
                     <span className="item-number text-accent">04</span>
                     <span className="item-name text-white/70">OPPORTUNITIES</span>
                   </EditableElement>
-                </EditableElement>
+                </div>
 
               </div>
             </div>
