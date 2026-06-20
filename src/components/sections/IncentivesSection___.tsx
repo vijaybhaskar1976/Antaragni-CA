@@ -75,26 +75,18 @@ export function IncentivesSection() {
         */}
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 flex flex-col flex-1 min-h-0 relative z-10">
 
-          {/*
-            Title block: shrink-0 on BOTH the outer wrapper div AND the EditableElement
-            so the flex column never squeezes the heading into the stage area.
-            The EditableElement injects its own div — without shrink-0 on that wrapper
-            the stage-wrapper's mt-auto can push upward and overlap the taglines.
-          */}
-          <div className="flex-shrink-0">
-            <EditableElement id="title" className="flex flex-col items-start mb-6 md:mb-12 relative z-10">
-              <EditorialHeading variant="section" className="text-foreground mb-4 md:mb-6">
-                INCENTIVES
-              </EditorialHeading>
+          <EditableElement id="title" className="flex flex-col items-start mb-6 md:mb-12 relative z-10 flex-shrink-0">
+            <EditorialHeading variant="section" className="text-foreground mb-4 md:mb-6">
+              INCENTIVES
+            </EditorialHeading>
 
-              <EditableElement id="taglines" className="flex flex-col gap-1 text-accent tracking-[0.2em] text-[13px] md:text-[15px] font-medium">
-                <span>RECOGNITION.</span>
-                <span>EXPERIENCE.</span>
-                <span>GROWTH.</span>
-                <span>LEGACY.</span>
-              </EditableElement>
+            <EditableElement id="taglines" className="flex flex-col gap-1 text-accent tracking-[0.2em] text-[13px] md:text-[15px] font-medium">
+              <span>RECOGNITION.</span>
+              <span>EXPERIENCE.</span>
+              <span>GROWTH.</span>
+              <span>LEGACY.</span>
             </EditableElement>
-          </div>
+          </EditableElement>
 
           <div className="stage-wrapper mt-auto">
             <div className="stage-container">

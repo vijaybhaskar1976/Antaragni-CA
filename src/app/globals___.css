@@ -96,11 +96,6 @@ body {
   height: 100%;
   gap: 0;
   z-index: 2;
-  /* The pedestal image has visual dead space on its left/right edges — the 4 marble slabs
-     don't span the full image width. This padding aligns the flex columns with the slabs.
-     Tweak these values if your pedestal image has different edge margins. */
-  padding-left: 3.5%;
-  padding-right: 3.5%;
 }
 
 /* FIX 1: Intro animation via class toggle — keeps inline style clear for hover transform */

@@ -96,36 +96,17 @@ body {
   height: 100%;
   gap: 0;
   z-index: 2;
-  /* The pedestal image has visual dead space on its left/right edges — the 4 marble slabs
-     don't span the full image width. This padding aligns the flex columns with the slabs.
-     Tweak these values if your pedestal image has different edge margins. */
-  padding-left: 3.5%;
-  padding-right: 3.5%;
 }
 
-/* FIX 1: Intro animation via class toggle — keeps inline style clear for hover transform */
 .item-column {
   position: relative;
   flex: 1 1 0;
   height: 100%;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   perspective: 900px;
-  /* Start hidden for intro animation */
-  opacity: 0;
-  transform: translateY(55px);
-  /* Hover transition on transform + opacity both handled here */
-  transition:
-    opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Intro animation: JS adds this class after mount */
-.item-column.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Hover lifts the column — only applies once is-visible, so no flash */
-.item-column.is-visible:hover {
+.item-column:hover {
   transform: translateY(-12px) scale(1.03);
 }
 
@@ -157,26 +138,19 @@ body {
   pointer-events: none;
 }
 
-/* FIX 2: GPU layer promotion — prevents drop-shadow rasterization blurring on hover scale */
 .item-img {
   max-height: 100%;
   width: auto;
   max-width: 120%;
   object-fit: contain;
   display: block;
-  /* Promote to GPU compositing layer at native resolution BEFORE hover happens */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  will-change: transform, filter;
   filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.92)) drop-shadow(0 10px 22px rgba(0, 0, 0, 0.75));
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
   pointer-events: auto;
   transform-origin: bottom center;
 }
 
-/* Keep translateZ(0) on hover so the GPU layer stays active during scale */
 .item-column:hover .item-img {
-  transform: translateZ(0) scale(1.04);
+  transform: scale(1.04);
   filter: drop-shadow(0 45px 90px rgba(0, 0, 0, 0.95)) drop-shadow(0 16px 36px rgba(255, 184, 77, 0.25)) drop-shadow(0 0 55px rgba(255, 255, 255, 0.08));
 }
